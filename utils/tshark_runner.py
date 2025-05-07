@@ -1,4 +1,4 @@
-import subprocess
+import subprocess #터미널 명령어 실행할 수 있는 모듈
 
 def run_tshark(pcap_path, csv_path):
   cmd = [ "tshark", "-r", pcap_path, "-T", "fields",
