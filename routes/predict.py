@@ -13,7 +13,7 @@ predict_bp = Blueprint("predict", __name__)
 def allowed_file(filename):
   return '.' in filename and filename.rsplit('.',1)[1].lower() == 'pcap'
 
-@predict_bp.route("/predict", methods=['GET'])
+@predict_bp.route("/predict", methods=['POST'])
 def hello():
   if 'file' not in request.files:
     return jsonify({'error': '파일이 없습니다'}),400
