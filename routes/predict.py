@@ -6,7 +6,9 @@ from utils.tshark_runner import run_tshark
 from utils.model_loader import rf_model, feature_names #,iso_model
 from utils.attack_info import attack_explanations
 from utils.logger import log_prediction
+from utils.model_fixer import fix_prediction
 import traceback
+
 
 
 predict_bp = Blueprint("predict", __name__)
@@ -37,13 +39,16 @@ def hello():
     attack = rf_model.predict(X)[0]
     #anomaly = iso_model.predict(summary)[0] 이상탐지 모델로 분석
 
+    # 오탐 보정 적용
+    attack = fix_prediction(attack, summary)
+
     info = attack_explanations.get(attack, {"desc":"알 수 없는 공격", "level":"알 수 없음"})
     desc = info['desc']
     level = info['level']
     
-    #print("✅ 전처리 결과:", summary)
-    #print("✅ 예측 결과:", attack)
-    #print("✅ 설명 딕셔너리 결과:", info)
+    #print("전처리 결과:", summary)
+    #print("예측 결과:", attack)
+    #print("설명 딕셔너리 결과:", info)
 
     log_prediction(filename, attack,level,current_app.config['LOG_FILE'])
     

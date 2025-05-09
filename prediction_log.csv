@@ -2,3 +2,7 @@
 2025-05-08 17:58:01.768742,norm.pcap,Normal Traffic,없음
 2025-05-09 17:12:17.928685,norm.pcap,Normal Traffic,없음
 2025-05-09 18:26:56.387861,norm.pcap,Normal Traffic,없음
+2025-05-09 18:59:30.769526,norm.pcap,Normal Traffic,없음
+2025-05-09 18:59:57.416770,port.pcap,Port Scan,낮음
+2025-05-09 19:00:12.277695,test.pcap,Normal Traffic,없음
+2025-05-09 19:00:34.012072,arps.pcap,ARP Spoofing,중간

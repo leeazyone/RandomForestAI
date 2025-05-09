@@ -5,7 +5,7 @@ def run_tshark(pcap_path, csv_path):
     #tshark_path = "C:\\Program Files\\Wireshark\\tshark.exe"  # 직접 경로 지정
 
     cmd = [
-        tshark_path, "-r", pcap_path, "-T", "fields",
+        "tshark", "-r", pcap_path, "-T", "fields",
         "-e", "frame.time_epoch", "-e", "ip.src", "-e", "ip.dst", "-e", "ip.len",
         "-e", "icmp.type", "-e", "udp.dstport", "-e", "udp.length",
         "-e", "tcp.flags.syn", "-e", "tcp.flags.ack", "-e", "tcp.dstport",
