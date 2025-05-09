@@ -2,7 +2,7 @@ import subprocess
 
 
 def run_tshark(pcap_path, csv_path):
-    tshark_path = "C:\\Program Files\\Wireshark\\tshark.exe"  # 직접 경로 지정
+    #tshark_path = "C:\\Program Files\\Wireshark\\tshark.exe"  # 직접 경로 지정
 
     cmd = [
         tshark_path, "-r", pcap_path, "-T", "fields",
