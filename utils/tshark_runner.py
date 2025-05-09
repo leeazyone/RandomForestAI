@@ -5,7 +5,7 @@ def run_tshark(pcap_path, csv_path):
         "-e", "frame.time_epoch", "-e", "ip.src", "-e", "ip.dst", "-e", "ip.len",
         "-e", "icmp.type", "-e", "udp.dstport", "-e", "udp.length",
         "-e", "tcp.flags.syn", "-e", "tcp.flags.ack", "-e", "tcp.dstport",
-        "-e", "tcp.seq", "-e", "tcp.ack", "-e", "ttl",
+        "-e", "tcp.seq", "-e", "tcp.ack", "-e", "ip.ttl",
         "-e", "arp.src.proto_ipv4", "-e", "arp.dst.proto_ipv4", "-e", "arp.opcode",
         "-E", "header=y", "-E", "separator=,", "-E", "quote=d", "-E", "occurrence=f"]
 

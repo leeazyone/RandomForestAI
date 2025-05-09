@@ -35,9 +35,9 @@ def preprocess_csv(filepath):
     # TCP 시퀀스 번호의 표준편차 (패킷 흐름 분석용)
     result['tcp_seq_var'] = df['tcp.seq'].std()
 
-  if 'ttl' in df.columns:
+  if 'ip.ttl' in df.columns:
     # time-to-live 평균 (네트워크 거리 추정에 사용)
-    result['mean_ttl'] = df['ttl'].mean()
+    result['mean_ttl'] = df['ip.ttl'].mean()
 
   if 'arp.opcode' in df.columns:
     # ARP 응답 패킷의 비율 (2는 Reply)
