@@ -2,8 +2,6 @@ blinker==1.9.0
 click==8.1.8
 colorama==0.4.6
 Flask==3.1.0
-Flask-Cors==4.0.1         # ✅ Render배포용추가
-gunicorn==22.0.0          # ✅ Render베포용용추가
 itsdangerous==2.2.0
 Jinja2==3.1.6
 joblib==1.5.0
