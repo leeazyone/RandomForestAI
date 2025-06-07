@@ -14,5 +14,3 @@ SECRET_KEY = 'YOUR_FLASK_SECRET_KEY'
 
 JWT_SECRET_KEY = 'yourSuperSecretKey123!'
 
-MONGO_URI = 'mongodb+srv://dlwldls1222:aDGHYFYETw3lbkMk@capweb-cluster.mrba8fm.mongodb.net/?retryWrites=true&w=majority&appName=capweb-cluster'
-
