@@ -32,3 +32,12 @@ attack_explanations = {
         "level": "없음"
     }
 }
+attack_feature_map = {
+    "SYN Flood": ["syn_count", "tcp_seq_var", "tcp_port_variety"],
+    "ICMP Flood": ["icmp_type_8_ratio", "packet_count", "mean_ip_len"],
+    "UDP Flood": ["udp_port_variety", "mean_udp_len", "packet_count"],
+    "Port Scan": ["syn_count", "tcp_port_variety", "tcp_seq_var"],
+    "Ping of Death": ["mean_ip_len", "std_ip_len"],
+    "ARP Spoofing": ["arp_reply_ratio", "arp_src_ip_unique"],
+    "Normal Traffic": ["mean_ip_len", "std_ip_len"]
+}

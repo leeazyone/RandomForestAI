@@ -1,14 +1,16 @@
-#예측 결과를 CSV로 기록
+# utils/logger.py
+
+import os
 import csv
 from datetime import datetime
 
-def log_prediction(filename, attack, level, log_file):
-  with open(log_file, 'a', newline='') as csvfile:
-    writer = csv.writer(csvfile)
-    writer.writerow([datetime.now(), filename, attack, level])
+def log_prediction(userId, filename, attack, risk_level, log_file):
+    file_exists = os.path.exists(log_file)
 
-# anomaly는 이상탐지 모델로 하는 것이기 때문에 지금은 제거 
-#def log_prediction(filename, attack, anomaly, level, log_file):
-#with open(log_file, 'a', newline='') as csvfile:
-#   writer = csv.writer(csvfile)
-#   writer.writerow([datetime.now(), filename, attack, anomaly, level])
+    with open(log_file, mode="a", newline="\n", encoding="utf-8") as f:
+        writer = csv.writer(f)
+        if not file_exists:
+            writer.writerow(["timestamp", "userId", "filename", "attack", "risk_level"])
+
+        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")
+        writer.writerow([timestamp, userId, filename, attack, risk_level])

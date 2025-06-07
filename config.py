@@ -9,3 +9,10 @@ MAX_CONTENT_LENGTH = 50 * 1024 * 1024
 
 #예측 로그 파일 저장 경로
 LOG_FILE = './prediction_log.csv'
+
+SECRET_KEY = 'YOUR_FLASK_SECRET_KEY'
+
+JWT_SECRET_KEY = 'yourSuperSecretKey123!'
+
+MONGO_URI = 'mongodb+srv://dlwldls1222:aDGHYFYETw3lbkMk@capweb-cluster.mrba8fm.mongodb.net/?retryWrites=true&w=majority&appName=capweb-cluster'
+
